@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>岗日台球俱乐部 | 青少年台球公开赛 · 官方海报</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a2a1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', 'Roboto', 'PingFang SC', 'Microsoft YaHei', 'Poppins', system-ui, sans-serif;
+        }
+
+        .poster {
+            max-width: 680px;
+            width: 100%;
+            background: radial-gradient(circle at 20% 30%, #2a6b3c, #1b4d2a);
+            border-radius: 36px;
+            box-shadow: 0 30px 45px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 200, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poster::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(220, 240, 180, 0.12) 0px, rgba(220, 240, 180, 0.12) 2px, transparent 2px, transparent 10px),
+                repeating-linear-gradient(135deg, rgba(200, 220, 150, 0.08) 0px, rgba(200, 220, 150, 0.08) 2px, transparent 2px, transparent 10px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-deco {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .bg-deco .cue-stroke {
+            position: absolute;
+            bottom: 8%;
+            left: -30px;
+            width: 180px;
+            height: 10px;
+            background: linear-gradient(90deg, #c9a87b, #e9cf9a, #b87c3a);
+            transform: rotate(20deg);
+            border-radius: 20px;
+            opacity: 0.35;
+        }
+        .bg-deco .ball-1 {
+            position: absolute;
+            top: 10%;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 35% 35%, #fdf8e7, #e0c48b);
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(8px);
+        }
+        .bg-deco .ball-2 {
+            position: absolute;
+            bottom: 15%;
+            left: -30px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, #ffe5aa, #c99f44);
+            border-radius: 50%;
+            opacity: 0.15;
+            filter: blur(10px);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 32px 28px 40px;
+            backdrop-filter: brightness(1.02);
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .main-title {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #FFF6E0;
+            text-shadow: 3px 3px 0 #1f5a38, 5px 5px 12px rgba(0,0,0,0.4);
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFEFC0;
+            background: rgba(30, 55, 35, 0.7);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 24px;
+            border-radius: 60px;
+            margin-top: 12px;
+            border: 1px solid #eac981;
+        }
+
+        .card {
+            background: rgba(255, 252, 240, 0.94);
+            backdrop-filter: blur(3px);
+            border-radius: 32px;
+            padding: 18px 24px 22px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(210, 180, 110, 0.7);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+        .card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2b573d;
+            border-left: 6px solid #e7b45a;
+            padding-left: 16px;
+            margin-bottom: 16px;
+        }
+        .card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #bc6f2c;
+            margin: 14px 0 6px;
+            border-bottom: 1px dashed #e6cf9e;
+            padding-bottom: 4px;
+        }
+        .info-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #2d2c28;
+            margin-bottom: 8px;
+        }
+        .rule-list, .fee-list {
+            list-style: none;
+            margin-top: 4px;
+        }
+        .rule-list li, .fee-list li {
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+        .rule-list li:before {
+            content: "🎱";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 13px;
+            color: #cf8522;
+        }
+        .highlight {
+            background: #f3e5ce;
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-weight: 700;
+            color: #aa531c;
+            display: inline-block;
+            font-size: 13px;
+        }
+        .badge {
+            background: #366d50;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .price-grid {
+            background: #fef4e4;
+            border-radius: 24px;
+            padding: 12px 16px;
+            margin-top: 8px;
+        }
+        .reward-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e6d2b0;
+            padding: 8px 4px;
+            font-size: 14px;
+        }
+        .reward-rank {
+            font-weight: 800;
+            color: #2b573d;
+        }
+        .reward-price {
+            font-weight: 700;
+            color: #c27828;
+        }
+
+        .notice-strong {
+            background: linear-gradient(115deg, #ffeedb, #ffe0bc);
+            border-radius: 32px;
+            margin-top: 12px;
+            padding: 12px 16px;
+            text-align: center;
+            border: 2px solid #f3bc5c;
+        }
+        .notice-strong .big-rule {
+            background: #c45e1a;
+            color: white;
+            padding: 6px 24px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        .bonus-warning {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            border-radius: 32px;
+            padding: 12px 16px;
+            margin-top: 14px;
+            text-align: center;
+            color: white;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        .bonus-warning p {
+            font-size: 15px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .bonus-warning span {
+            background: rgba(255,255,200,0.2);
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 14px;
+        }
+        .half-detail {
+            font-size: 12px;
+            margin-top: 6px;
+            color: #fff3cf;
+        }
+
+        .register-only {
+            background: #fff4e4;
+            border-radius: 28px;
+            padding: 12px 16px;
+            text-align: center;
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #2b573d;
+        }
+        .contact-line {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .contact-line a {
+            color: #cf792b;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 11px;
+            color: #fbf3e0;
+            background: rgba(0,0,0,0.35);
+            padding: 8px 18px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+        }
+
+        .rule-note {
+            background: #f8efdf;
+            border-radius: 24px;
+            padding: 10px 14px;
+            margin-top: 14px;
+            font-size: 12px;
+        }
+
+        /* 竞赛规则卡片：所有文字默认黑体 */
+        .rule-card * {
+            font-weight: bold;
+            font-family: inherit;
+        }
+        /* 但括号内的解释内容需要恢复正常字体 */
+        .rule-card .normal-text {
+            font-weight: normal;
+        }
+        /* 规则列表前的🎱图标保持普通粗细 */
+        .rule-card .rule-list li:before {
+            font-weight: normal;
+        }
+
+        @media (max-width: 550px) {
+            .content {
+                padding: 24px 18px 32px;
+            }
+            .main-title {
+                font-size: 32px;
+            }
+            .subhead {
+                font-size: 15px;
+            }
+            .card h3 {
+                font-size: 20px;
+            }
+            .info-text, .rule-list li, .fee-list li {
+                font-size: 13px;
+            }
+            .notice-strong .big-rule {
+                font-size: 15px;
+            }
+            .bonus-warning p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="poster">
+    <div class="bg-deco">
+        <div class="cue-stroke"></div>
+        <div class="ball-1"></div>
+        <div class="ball-2"></div>
+    </div>
+    <div class="content">
+        <div class="hero">
+            <div class="main-title">青春“杆”动，一击制胜！</div>
+            <div class="subhead">岗日台球俱乐部首届青少年台球赛热血开启！</div>
+        </div>
+
+        <!-- 赛事信息卡片 -->
+        <div class="card">
+            <h3>📋 赛事信息</h3>
+            <div class="info-text">
+                <span class="badge">公开报名</span> 台球爱好者均可参赛<br>
+                <strong>💰 报名费：</strong> 50元 / 人 · <strong class="highlight">16周岁以下青少年及女生免费</strong><br>
+                <span style="font-size:13px;">💡 淘汰后20元复活（仅限一次）</span>
+            </div>
+            <h4>⏰ 比赛日期 & 时间</h4>
+            <div class="info-text">
+                <strong>2026年03月28日 (周六)</strong><br>
+                🕛 抽签时间：中午 12:00<br>
+                🕑 比赛时间：下午 14:00
+            </div>
+            <h4>⏱️ 迟到判罚</h4>
+            <div class="info-text">
+                比赛开始后 <strong>15分钟未到</strong> 则负一局，<strong>30分钟未到</strong> 判弃权。
+            </div>
+        </div>
+
+        <!-- 竞赛规则卡片：全部文字黑体，括号内说明除外；让球规则最多让后三球 -->
+        <div class="card rule-card">
+            <h3>🎯 竞赛规则</h3>
+            <ul class="rule-list">
+                <li>首局猜拳决定开球权</li>
+                <li><strong>正赛：抢5</strong> / 半决赛、决赛：<strong>抢10</strong></li>
+                <li>全程晕球有效，无需指袋 <span class="normal-text">（即击打任意目标球，不论以何种方式进袋均算有效，无需指定袋口）</span></li>
+                <li>无专业裁判，争议由选手协商解决</li>
+                <li><strong>让球规则：</strong><br>
+                    • <strong>弹性让球制：</strong> 第一局平，赢一局让后一，赢两局让后二，赢三局让后三，最多让后三球。<br>
+                    • <strong>特殊优待：</strong> 小于16周岁及女性选手全场让后一球，最多让后三球。
+                </li>
+            </ul>
+            <div class="rule-note">
+                🧑‍🤝‍🧑 文明观赛：禁止大声喧哗，请勿乱丢烟头、槟榔渣，保持场地整洁。
+            </div>
+        </div>
+
+        <!-- 奖励机制卡片（4-7名改为4-8名） -->
+        <div class="card">
+            <h3>🏆 奖励机制</h3>
+            <div class="price-grid">
+                <div class="reward-item"><span class="reward-rank">🏅 冠军</span><span class="reward-price">1000元 (500现金+500会员卡)</span></div>
+                <div class="reward-item"><span class="reward-rank">🥈 亚军</span><span class="reward-price">800元 (400现金+400会员卡)</span></div>
+                <div class="reward-item"><span class="reward-rank">🥉 季军</span><span class="reward-price">500元 (250现金+250会员卡)</span></div>
+                <div class="reward-item"><span class="reward-rank">🎖️ 4-8名</span><span class="reward-price">会员卡 100元/人</span></div>
+            </div>
+            <div class="bonus-warning">
+                <p>⚠️ <strong>特别说明</strong> ⚠️</p>
+                <p><span>📢 若最终报名人数不满50人，以上所有奖金减半发放 📢</span></p>
+                <div class="half-detail">
+                    冠军：250元现金 + 250元会员卡 &nbsp;|&nbsp;
+                    亚军：200元现金 + 200元会员卡 &nbsp;|&nbsp;
+                    季军：125元现金 + 125元会员卡 &nbsp;|&nbsp;
+                    4-8名：会员卡50元
+                </div>
+            </div>
+            <div class="notice-strong">
+                <div class="big-rule">⚡ 比赛期间由负方支付台费 ⚡</div>
+                <p style="font-size:12px; margin-top:6px;">（按俱乐部标准计时计费，请知悉）</p>
+            </div>
+        </div>
+
+        <!-- 报名方式卡片（唯一地址、电话） -->
+        <div class="card">
+            <h3>📞 报名方式</h3>
+            <div class="register-only">
+                🏁 请到店报名<br>
+                🏠 拉萨市城关区八郎学二巷37号 · 岗日台球俱乐部<br>
+                <div class="contact-line">
+                    📞 咨询热线：<a href="tel:19108984399">19108984399</a> &nbsp;|&nbsp; <a href="tel:18908989455">18908989455</a> (微信同号)
+                </div>
+                ⏳ 截止日期：2026年3月28日中午12:00前
+            </div>
+            <div class="info-text" style="margin-top: 12px; text-align: center; font-size: 13px;">
+                💡 普通选手50元/人，16周岁以下及女生免费参赛，现场缴纳或凭证件免费登记
+            </div>
+        </div>
+
+        <!-- 补充说明卡片 -->
+        <div class="card">
+            <h3>📌 补充说明</h3>
+            <ul class="fee-list">
+                <li>尊重对手，发扬体育精神；可使用俱乐部器材或自备球杆。</li>
+                <li>如遇特殊情况，赛程调整等事宜由<strong class="highlight">本俱乐部</strong>全权负责通知。</li>
+            </ul>
+            <div class="info-text" style="margin-top: 10px;">💡 淘汰后仅限一次“20元复活”，增加逆袭机会！</div>
+        </div>
+
+        <!-- 底部：最终解释权 -->
+        <div class="footer-note">
+            🎱 最终解释权归岗日台球俱乐部所有
+        </div>
+        <div style="text-align: center; margin-top: 12px; font-size: 10px; color: #ffefbf;">
+            ⏳ 2026.03.28 中午12:00抽签 · 14:00开赛  |  雪域台球热力开杆
+        </div>
+    </div>
+</div>
+</body>
+</html>
